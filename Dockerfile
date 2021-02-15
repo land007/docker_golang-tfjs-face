@@ -1,5 +1,5 @@
-#FROM land007/golang-node:latest
-FROM land007/l4t-golang-node:latest
+FROM land007/golang-node:latest
+#FROM land007/l4t-golang-node:latest
 #docker build -t land007/l4t-golang-tfjs-face .
 #docker run --runtime nvidia --rm -it --name l4t-tfjs land007/l4t-golang-tfjs-face:latest bash
 
