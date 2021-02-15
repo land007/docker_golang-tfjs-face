@@ -5,12 +5,12 @@ FROM land007/l4t-golang-node:latest
 
 MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
-ADD face-api.js /node_/face-api.js
+#ADD face-api.js /node_/face-api.js
 
 RUN . $HOME/.nvm/nvm.sh && cd / && npm install @tensorflow/tfjs @tensorflow/tfjs-node socket.io-client && \
-#	cd /node_ && git clone https://github.com/justadudewhohacks/face-api.js.git && \
-	. $HOME/.nvm/nvm.sh && cd /node_/face-api.js/ && npm i && cd /node_/face-api.js/examples/examples-nodejs/ && npm i && npm install -g node-pre-gyp ts-node typescript && \
-	echo $(date "+%Y-%m-%d_%H:%M:%S") >> /.image_times && \
+	cd /node_ && git clone https://github.com/justadudewhohacks/face-api.js.git && \
+RUN . $HOME/.nvm/nvm.sh && cd /node_/face-api.js/ && npm i && cd /node_/face-api.js/examples/examples-nodejs/ && npm i && npm install -g node-pre-gyp ts-node typescript
+RUN echo $(date "+%Y-%m-%d_%H:%M:%S") >> /.image_times && \
 	echo $(date "+%Y-%m-%d_%H:%M:%S") > /.image_time && \
 	echo "land007/golang-tfjs-face" >> /.image_names && \
 	echo "land007/golang-tfjs-face" > /.image_name
